@@ -11,9 +11,13 @@ echo "[*] Waiting for message. To exit press CTRL+C \n";
 
 // fn to deliver message from queue
 $callback = function ($msg) {
-    echo '[X] Received', $msg->body, "\n";
+    echo '[X] Received', $msg->getBody(), "\n";
+    sleep(substr_count($msg->getBody(), '.'));
+    echo "[x] Done\n";
+    $msg->ack();
 };
 
+$channel->basic_qos(null, 1, false); // instruct queue to dispatch one message at a time
 $channel->basic_consume('hello', '', false, true, false, false, $callback);
 
 try {
@@ -21,4 +25,7 @@ try {
 } catch (\Throwable $exception) {
     echo $exception->getMessage();
 }
+
+$channel->close();
+$connection-> close();
 ?>
