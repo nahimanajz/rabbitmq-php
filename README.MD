@@ -17,3 +17,17 @@ Run these commands
 5. run php receive.php // in an other tab of terminal
 Whenever you hit php send.php we expect to see message from receiver.php terminal 
 
+# Key terms explanations
+
+A producer is a user application that sends messages.
+A queue is a buffer that stores messages.
+A consumer is a user application that receives messages.
+
+## exhange 
+A producer is a user application that sends messages.
+A queue is a buffer that stores messages.
+A consumer is a user application that receives messages.
+
+### Listing exachagne
+ Run in terminal: `sudo rabbitmqctl list_exchanges`
+
