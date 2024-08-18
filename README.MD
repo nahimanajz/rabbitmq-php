@@ -1,7 +1,7 @@
 # Installation guide
 
-1. Having docker installed and started you initially start by installing rabbit mq by this command ```# latest RabbitMQ 3.13
-docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management```
+1. Having docker installed and started you initially start by installing rabbit mq by this command # latest RabbitMQ 3.13
+``` docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management```
 
 2. create file called composer.json 
 ``` 
